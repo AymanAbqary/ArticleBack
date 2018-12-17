@@ -36,7 +36,7 @@ public class ArticleApi {
 	}
 	
 	@PostMapping(value="/")
-	public Article saveOrUpdate(@RequestBody Article article,@RequestParam("img") MultipartFile img) {
+	public Article saveOrUpdate(@RequestPart Article article,@RequestParam("img") MultipartFile img) {
 		Path path = Paths.get(uploadedFolder + img.getOriginalFilename());
 		try {
 			Files.createDirectories(path.getParent());
